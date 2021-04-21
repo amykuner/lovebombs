@@ -1,0 +1,18 @@
+body {
+  font-family: system-ui, sans-serif;
+}
+ul {
+  padding-left: 0;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.inline {
+  display: inline;
+}
+form > button:only-child {
+  border: 0;
+  background: none;
+}

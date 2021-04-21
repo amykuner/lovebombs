@@ -1,15 +1,22 @@
 const express = require("express");
 const server = express();
-const PORT = process.env.PORT || 3000;
+const staticHandler = express.static("public");
+const layout = require("layout.js")
+server.use(staticHandler);
 
 
 
-server.get("/",(request, response)=>{
+
+server.get("/:name",(request, response) => {
+
     response.send("<h1>Hello!</h1>")
 })
 
 
 
+
+
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
 });
