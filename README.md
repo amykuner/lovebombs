@@ -2,19 +2,10 @@
 
 **Roles**
 
-Deployment: Antonio
-
----
-
-Facilitator: Chun
-
----
-
-User: Maryam
-
----
-
-Quality: Safia
+Deployment: Antonio<br>
+Facilitator: Chun<br>
+User: Maryam<br>
+Quality: Safia<br>
 
 ---
 
@@ -22,13 +13,8 @@ Quality: Safia
 
 Possibilities:
 
----
-
-Recipes Blog
-
----
-
-Compliments Blog
+Recipes Blog<br>
+Compliments Blog<br>
 
 ---
 
