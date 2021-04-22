@@ -24,7 +24,7 @@ function home(request, response) {
       <form action="/" method="POST">
 
       <label for="facMembers">Choose someone to compliment</label>
-        <select name="facMmbers" id="facMembers">
+        <select name="facMembers" id="facMembers">
 
           ${userList}
         </select>
