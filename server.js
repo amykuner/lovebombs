@@ -1,19 +1,16 @@
 const express = require("express");
 const server = express();
 const staticHandler = express.static("public");
-const layout = require("layout.js")
+// const layout = require("layout.js")
+const home = require("./routes/home.js")
 server.use(staticHandler);
 
+// server.get("/:name",(request, response) => {
 
+//     response.send("<h1>Hello!</h1>")
+// })
 
-
-server.get("/:name",(request, response) => {
-
-    response.send("<h1>Hello!</h1>")
-})
-
-
-
+server.get("/", home.home)
 
 
 const PORT = process.env.PORT || 3000;
