@@ -1,20 +1,23 @@
 const express = require("express");
-const server = express();
+
 const staticHandler = express.static("public");
-server.use(staticHandler);
-
-
+const posts = require("./routes/posts.js");
 const model = require("./database/model.js");
 
-server.get("/",(request, response) => {
-  model.getFacMembers().then((results) => {
-    console.log(results);
-    })
-    response.send("<h1>Hello!</h1>")
-})
+const server = express();
 
+server.use(staticHandler);
+
+server.get("/facmembers/:name", posts.get);
+server.post("/facmembers/:name", posts.post);
 
 const PORT = process.env.PORT || 3000;
+
+process.on("unhandledRejection", (error) => {
+  console.error(error);
+  process.exit(1);
+});
+
 server.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
 });
