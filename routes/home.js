@@ -31,14 +31,13 @@ function home(request, response) {
       <form action="/createUser" method="POST">
           <label>fullname</label>
           <input id="fullname" name="fullname">
-          <label>cohort_name</label>
-          <input id="cohort_name" name="cohort_name">
-
           <label>img_url</label>
           <input id="img_url" name="img_url">
+          <label>cohort_name</label>
+          <input id="cohort_name" name="cohort_name">
           <label>fac_role</label>
           <input id="fac_role" name="fac_role">
-          <input type="submit">
+          <input id="submit2" type="submit">
       </form>
   </section>
 
