@@ -11,35 +11,37 @@ function home(request, response) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel='stylesheet' src='styles.css'>
-      <title>Document</title>
+      <link rel='stylesheet' href='styles.css'>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+      <title>With Compliments</title>
     </head>
     <body>
-      <h1>Hello</h1>
 
-      <form action="/" method="POST">
 
-      <label for="name">Choose a name:</label>
-        <select name="name" id="name">
+      <h1>With Compliments</h1>
+      <img src='hands.svg'>
+      <form action="/facmembers/:" method="GET">
+
+      <label for="fac-members">Choose someone to compliment</label>
+        <select name="fac-members" id="fac-members">
+
           ${userList}
         </select>
-        <input type="submit">
+        <input class='button' type="submit">
       </form>
      
-      
-
       <section>
       <form action="/createUser" method="POST">
-          <label>fullname</label>
+          <label>Name</label>
           <input id="fullname" name="fullname">
-          <label>cohort_name</label>
+          <label>Cohort name</label>
           <input id="cohort_name" name="cohort_name">
-
-          <label>img_url</label>
+          <label>Image url</label>
           <input id="img_url" name="img_url">
-          <label>fac_role</label>
-          <input id="fac_role" name="fac_role">
-          <input type="submit">
+          <label>FAC role</label>
+          <input id="fac_role" name="fac_role"><br>
+          <input class='button' type="submit">
       </form>
   </section>
 
