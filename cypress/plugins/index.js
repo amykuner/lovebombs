@@ -1,22 +1,15 @@
-/// <reference types="cypress" />
-// ***********************************************************
-// This example plugins/index.js can be used to load plugins
-//
-// You can change the location of this file or turn off loading
-// the plugins file with the 'pluginsFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/plugins-guide
-// ***********************************************************
+// `on` is used to hook into various events Cypress emit config` is the resolved Cypress config
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
+// Cypress provides a way to execute code in your Node environment: “tasks”.
+// These are special functions you can create and then call from inside tests
+//  import build in our Cypress task and use it to reset the database.
 
-/**
- * @type {Cypress.PluginConfig}
- */
-// eslint-disable-next-line no-unused-vars
+const build = require('../../database/build.js');
+
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+  on('task', {
+    resetDb: () => {
+      return build();
+    },
+  });
+};

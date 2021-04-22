@@ -1,7 +1,6 @@
 const express = require("express");
 const server = express();
 const staticHandler = express.static("public");
-const layout = require("layout.js")
 server.use(staticHandler);
 
 
