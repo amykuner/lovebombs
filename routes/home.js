@@ -3,6 +3,7 @@ const db = require("../database/connection.js");
 function home(request, response) {
   db.query("SELECT * FROM fac_members").then((result) => {
     const users = result.rows;
+
     const userList = users.map((user) => `<option value='${user.full_name}'>${user.full_name}</option>`).join("");
     
     response.send(`<!DOCTYPE html>
@@ -16,12 +17,15 @@ function home(request, response) {
       <title>With Compliments</title>
     </head>
     <body>
+
+
       <h1>With Compliments</h1>
       <img src='hands.svg'>
       <form action="/facmembers/:" method="GET">
 
       <label for="fac-members">Choose someone to compliment</label>
         <select name="fac-members" id="fac-members">
+
           ${userList}
         </select>
         <input class='button' type="submit">
@@ -43,13 +47,20 @@ function home(request, response) {
 
 
     </body>
-    </html>`
-  );
-});
+    </html>`);
+  });
 }
+
+function post(request, response) {
+  const name = request.body.name;
+  response.redirect(`facmembers/${name}`);
+}
+
+
+module.exports = { home, post };
 
 
 
 
   
-module.exports = { home }; 
+
