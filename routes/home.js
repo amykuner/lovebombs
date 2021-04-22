@@ -2,15 +2,10 @@ const db = require("../database/connection.js");
 
 function home(request, response) {
   db.query("SELECT * FROM fac_members").then((result) => {
-    // console.log(result);
     const users = result.rows;
-    const userFullName = users.map((user) => user.full_name);
-    const userList = users
-      .map(
-        (user) => `<option value='${user.full_name}'>${user.full_name}</option>`
-      )
-      .join("");
 
+    const userList = users.map((user) => `<option value='${user.full_name}'>${user.full_name}</option>`).join("");
+    
     response.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -30,7 +25,25 @@ function home(request, response) {
         </select>
         <input type="submit">
       </form>
-${users}
+     
+      
+
+      <section>
+      <form action="/createUser" method="POST">
+          <label>fullname</label>
+          <input id="fullname" name="fullname">
+          <label>cohort_name</label>
+          <input id="cohort_name" name="cohort_name">
+
+          <label>img_url</label>
+          <input id="img_url" name="img_url">
+          <label>fac_role</label>
+          <input id="fac_role" name="fac_role">
+          <input type="submit">
+      </form>
+  </section>
+
+
     </body>
     </html>`);
   });
@@ -41,4 +54,11 @@ function post(request, response) {
   response.redirect(`facmembers/${name}`);
 }
 
+
 module.exports = { home, post };
+
+
+
+
+  
+

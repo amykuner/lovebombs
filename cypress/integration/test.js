@@ -5,7 +5,16 @@ beforeEach(() => {
 });
 
 describe('check homepage link ', () => {
-  it('can navigate pages', () => {
+  it('can go to home page', () => {
     cy.visit('/');
   });
+
+});
+
+it('can select dropdown', () => {
+  cy.visit('/');
+  cy.get('select').select('Neville');
+  cy.get('select').should('have.value', 'Neville');
+  cy.get('form').submit();
+  cy.visit('/facmembers/:Neville');
 });
