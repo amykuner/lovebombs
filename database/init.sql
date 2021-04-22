@@ -2,6 +2,8 @@
 BEGIN;
 DROP TABLE IF EXISTS users, fac_members, compliments CASCADE;
 
+SET timezone = 'Europe/London';
+
 CREATE TABLE fac_members (
   id serial primary key,
   full_name varchar(255) NOT NULL, 
@@ -16,13 +18,11 @@ CREATE TABLE users (
 );
 
 
-
-
 CREATE TABLE compliments (
   id serial primary key,
   user_id  integer References users(id) ON DELETE CASCADE,
   fac_member_id  integer References fac_members(id) ON DELETE CASCADE,
- text_content text,
+  text_content text,
   created_at timestamp
 );
 
@@ -36,10 +36,19 @@ INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES
 ;
 
 
-INSERT INTO compliments ( fac_member_id, text_content) VALUES
-  (1, 'Amy is funny'),
-  (2, 'Antonio is smart')
+INSERT INTO users ( username) VALUES
+  ('user1'),
+  ('unknown genius')
+;
+
+INSERT INTO compliments ( user_id, fac_member_id, text_content, created_at) VALUES
+  (2, 1, 'Amy is funny', (SELECT CURRENT_TIMESTAMP)),
+  (1, 2, 'Antonio is smart', (SELECT CURRENT_TIMESTAMP))
 ;
 
 
+
 COMMIT;
+
+
+
