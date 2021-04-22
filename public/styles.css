@@ -1,12 +1,37 @@
 body {
   font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Reem Kufi', sans-serif;
+  background: #5fc6d2;
+  color: #292625;
+  box-sizing: border-box;
 }
-ul {
-  padding-left: 0;
+h1:hover {
+
+}
+select {
+  font-family: 'Reem Kufi', sans-serif;
+}
+.button {
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: #ee6428; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  cursor: pointer;
 }
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
   font-weight: bold;
 }
 .inline {
@@ -15,4 +40,7 @@ label {
 form > button:only-child {
   border: 0;
   background: none;
+}
+#fac_role {
+  margin-bottom: 5px;
 }

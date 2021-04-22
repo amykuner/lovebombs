@@ -27,6 +27,19 @@ function addComments(values) {
             VALUES ($1, $2, $3, $4)`, [values]);
 }
 
+// db.query("INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES($1, $2, $3, $4)", [full_name,img_url, cohort_name, fac_role ]);
 
+function createUser(request, response) {
+  const data = request.body;
+  console.log(data)
+  const values = Object.values(data);
+  db.query(
+    "INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES($1, $2, $3, $4)",
+    values
+  ).then(() => {
+    response.redirect("/");
+  });
+}
 
-module.exports = { getFacMembers, getFacMemberDetails, getComments, addComments};
+module.exports = { getFacMembers, getFacMemberDetails, getComments, addComments, createUser};
+
