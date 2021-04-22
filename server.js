@@ -5,16 +5,17 @@ const staticHandler = express.static("public");
 const posts = require("./routes/posts.js");
 const home = require("./routes/home.js");
 const model = require("./database/model.js");
+const { request } = require("express");
 
 server.use(staticHandler);
-
+const bodyParser = express.urlencoded({ extended: false });
 // server.get("/:name",(request, response) => {
 
 //     response.send("<h1>Hello!</h1>")
 // })
 
 server.get("/", home.home)
-
+server.post("/createUser", bodyParser, model.createUser)
 server.get("/facmembers/:name", posts.get);
 server.post("/facmembers/:name", posts.post);
 
