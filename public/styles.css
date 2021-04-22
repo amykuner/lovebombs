@@ -10,8 +10,26 @@ body {
   color: #292625;
   box-sizing: border-box;
 }
+select {
+  width: 20%;
+}
+img {
+  height: 50vh;
+  animation: fadeIn 5s linear;
+  -webkit-animation: fadeIn 5s linear;
+  -moz-animation: fadeIn 5s linear;
+  -o-animation: fadeIn 5s linear;
+  -ms-animation: fadeIn 5s linear;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+h1 {
+  font-size: 3rem;
+}
 h1:hover {
-
+  font-size: 250%;
 }
 select {
   font-family: 'Reem Kufi', sans-serif;
@@ -43,4 +61,14 @@ form > button:only-child {
 }
 #fac_role {
   margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  label {
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+  }
 }
