@@ -20,7 +20,7 @@ server.get("/", home.home)
 server.post("/", bodyParser, home.post);
 
 server.get("/facmembers/:name", posts.get);
-server.post("/facmembers/:name", posts.post);
+server.post("/facmembers/:name", bodyParser, posts.post);
 
 const PORT = process.env.PORT || 3000;
 
