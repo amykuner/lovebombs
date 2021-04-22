@@ -1,5 +1,4 @@
 // Link the database to the server
-
 const pg = require('pg');
 const dotenv = require('dotenv');
 
