@@ -71,14 +71,20 @@ async function get(request, response) {
 
 function post(request, response) {
   const urlName = request.originalUrl.replace("/facmembers/","");
-  const data = Object.values(equest.body)
+  let data = Object.values(request.body);
+  // let newArray = [...2, , ...data[0]];
+  // data.
 
-  console.log(urlName, data)
+  model.addComments(data).then((result) => {
+    console.log(result);
+    response.redirect(`/facmembers/${urlName}`);
+  })
 
+  //user_id, fac_member_id, text_content, created_at;
+  //console.log(urlName, data
 
 //   console.log(data)
 
-  response.redirect(`/facmembers/${urlName}`);
 }
 
 module.exports = { get, post };
