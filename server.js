@@ -14,9 +14,10 @@ server.use(staticHandler);
 // })
 
 server.get("/", home.home)
+server.post('/facmembers/:name', );
 
 server.get("/facmembers/:name", posts.get);
-server.post("/facmembers/:name", posts.post);
+server.post('/', posts.post);
 
 const PORT = process.env.PORT || 3000;
 
