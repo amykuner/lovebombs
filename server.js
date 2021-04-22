@@ -4,15 +4,14 @@ const staticHandler = express.static("public");
 server.use(staticHandler);
 
 
+const model = require("./database/model.js");
 
-
-server.get("/:name",(request, response) => {
-
+server.get("/",(request, response) => {
+  model.getFacMembers().then((results) => {
+    console.log(results);
+    })
     response.send("<h1>Hello!</h1>")
 })
-
-
-
 
 
 const PORT = process.env.PORT || 3000;
