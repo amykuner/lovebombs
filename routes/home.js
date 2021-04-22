@@ -5,8 +5,12 @@ function home(request, response) {
     // console.log(result);
     const users = result.rows;
     const userFullName = users.map((user) => user.full_name);
-    const userList = users.map((user) => `<option value='${user.full_name}'>${user.full_name}</option>`).join("");
-    
+    const userList = users
+      .map(
+        (user) => `<option value='${user.full_name}'>${user.full_name}</option>`
+      )
+      .join("");
+
     response.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -18,19 +22,23 @@ function home(request, response) {
     <body>
       <h1>Hello</h1>
 
-      <form action="/facmembers/:" method="GET">
+      <form action="/" method="POST">
 
-      <label for="fac-members">Choose a name:</label>
-        <select name="fac-members" id="fac-members">
+      <label for="name">Choose a name:</label>
+        <select name="name" id="name">
           ${userList}
         </select>
         <input type="submit">
       </form>
 ${users}
     </body>
-    </html>`
-  );
-});
+    </html>`);
+  });
 }
-  
-module.exports = { home }; 
+
+function post(request, response) {
+  const name = request.body.name;
+  response.redirect(`facmembers/${name}`);
+}
+
+module.exports = { home, post };
