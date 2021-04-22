@@ -21,10 +21,10 @@ function home(request, response) {
 
       <h1>With Compliments</h1>
       <img src='hands.svg'>
-      <form action="/facmembers/:" method="GET">
+      <form action="/" method="POST">
 
-      <label for="fac-members">Choose someone to compliment</label>
-        <select name="fac-members" id="fac-members">
+      <label for="facMembers">Choose someone to compliment</label>
+        <select name="facMmbers" id="facMembers">
 
           ${userList}
         </select>
@@ -52,7 +52,7 @@ function home(request, response) {
 }
 
 function post(request, response) {
-  const name = request.body.name;
+  const name = request.body.facMembers;
   response.redirect(`facmembers/${name}`);
 }
 
