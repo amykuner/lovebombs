@@ -1,8 +1,8 @@
 const express = require("express");
 const server = express();
 const staticHandler = express.static("public");
-// const layout = require("layout.js")
 const home = require("./routes/home.js")
+
 server.use(staticHandler);
 
 // server.get("/:name",(request, response) => {
