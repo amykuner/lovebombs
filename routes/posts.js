@@ -70,21 +70,17 @@ async function get(request, response) {
 }
 
 function post(request, response) {
-  const urlName = request.originalUrl.replace("/facmembers/","");
-  let data = Object.values(request.body);
-  // let newArray = [...2, , ...data[0]];
-  // data.
+  const urlName = request.originalUrl.replace("/facmembers/", "");
+  const data = Object.values(request.body);
 
-  model.addComments(data).then((result) => {
-    console.log(result);
-    response.redirect(`/facmembers/${urlName}`);
-  })
-
-  //user_id, fac_member_id, text_content, created_at;
-  //console.log(urlName, data
-
-//   console.log(data)
-
+  model
+    .getFacMemberDetails(urlName)
+    .then((result) => result[0].id)
+    .then((id) => model.addComments([2, id, data[0]]))
+    .then((result) => {
+      console.log(result);
+      response.redirect(`/facmembers/${urlName}`);
+    });
 }
 
 module.exports = { get, post };

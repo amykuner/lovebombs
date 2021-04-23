@@ -24,7 +24,7 @@ function addComments(values) {
     return db
         .query(
             `INSERT INTO compliments (user_id, fac_member_id, text_content, created_at)
-            VALUES ($1, $2, $3, $4)`, [values]);
+            VALUES ($1, $2, $3, (SELECT CURRENT_TIMESTAMP))`, values);
 }
 
 // db.query("INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES($1, $2, $3, $4)", [full_name,img_url, cohort_name, fac_role ]);

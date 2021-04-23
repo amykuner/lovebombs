@@ -20,7 +20,7 @@ function home(request, response) {
 
 
       <h1>With Compliments</h1>
-      <img src='hands.svg'>
+      <img src='hands.svg' alt="two hands holding">
       <form action="/" method="POST">
 
       <label for="facMembers">Choose someone to compliment</label>
@@ -35,10 +35,12 @@ function home(request, response) {
       <form action="/createUser" method="POST">
           <label>Name</label>
           <input id="fullname" name="fullname">
-          <label>Cohort name</label>
-          <input id="cohort_name" name="cohort_name">
+
           <label>Image url</label>
           <input id="img_url" name="img_url">
+          <label>Cohort name</label>
+          
+          <input id="cohort_name" name="cohort_name">
           <label>FAC role</label>
           <input id="fac_role" name="fac_role"><br>
           <input class='button' type="submit">
