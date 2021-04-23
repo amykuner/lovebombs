@@ -6,7 +6,7 @@ SET timezone = 'Europe/London';
 
 CREATE TABLE fac_members (
   id serial primary key,
-  full_name varchar(255) NOT NULL, 
+  full_name varchar(255) NOT NULL,
   img_url  text,
   cohort_name varchar(255),
   fac_role varchar(255)
@@ -25,6 +25,8 @@ CREATE TABLE compliments (
   text_content text,
   created_at timestamp
 );
+
+
 
 
 INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES
@@ -50,6 +52,3 @@ INSERT INTO compliments ( user_id, fac_member_id, text_content, created_at) VALU
 
 
 COMMIT;
-
-
-
