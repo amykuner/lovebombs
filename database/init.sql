@@ -33,7 +33,7 @@ INSERT INTO fac_members (full_name, img_url, cohort_name, fac_role ) VALUES
   ('Amy', 'https://avatars.githubusercontent.com/u/72794385?v=4', 'fac21', 'student'),
   ('Antonio', 'https://avatars.githubusercontent.com/u/63958540?v=4', 'fac21', 'student'),
   ('Mariya', 'https://avatars.githubusercontent.com/u/72445011?v=4', 'fac21', 'student'),
-  ('Neville', 'https://avatars.githubusercontent.com/u/60395899?v=4', 'fac21', 'student'),
+  ('Neville', 'https://avatars.githubusercontent.com/u/60395899?v=4', 'fac21', 'student')
 
 ;
 
