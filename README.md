@@ -2,28 +2,9 @@
 
 ---
 
-We deployed our application on [Heroku](https://with-compliments.herokuapp.com/)
+I forked this from ...
 
 ---
-
-**Roles**
-
-Deployment: Antonio<br>
-Facilitator: Chun<br>
-User: Maryam<br>
-Quality: Safia<br>
-
----
-
-**Concept**
-
-Possibilities:
-
-Recipes Blog<br>
-Compliments Blog<br>
-
----
-
 **Schema**
 
 Below is the schema for our database.
