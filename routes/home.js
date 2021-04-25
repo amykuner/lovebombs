@@ -2,9 +2,9 @@ const db = require("../database/connection.js");
 
 function home(request, response) {
   db.query("SELECT * FROM fac_members").then((result) => {
-    const users = result.rows;
+    const members = result.rows;
 
-    const userList = users.map((user) => `<option value='${user.full_name}'>${user.full_name}</option>`).join("");
+    const memberList = members.map((member) => `<option value='${member.full_name}'>${member.full_name}</option>`).join("");
 
     response.send(`<!DOCTYPE html>
     <html lang="en">
@@ -25,7 +25,7 @@ function home(request, response) {
       <label for="facMembers">Choose someone to compliment</label>
         <select name="facMembers" id="facMembers">
 
-          ${userList}
+          ${memberList}
         </select>
         <input class='button' type="submit">
       </form>

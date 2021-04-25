@@ -28,9 +28,9 @@ img {
 h1 {
   font-size: 3rem;
 }
-h1:hover {
+/* h1:hover {
   font-size: 250%;
-}
+} */
 select {
   font-family: 'Reem Kufi', sans-serif;
 }
